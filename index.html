@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audio Player</title>
+        <link rel="stylesheet" href="./normalize.css">
+        <link rel="stylesheet" href="./styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+       
+    </head>
+    <body>
+      <div class="background-page">
+        <div class="background-poster backgroung-dark" style="background-image: url(./pics/background.jpeg);">
+
+        </div>
+      </div>
+        <loader style="display: none;"></loader>
+       
+        
+        <div class="page" >
+
+               
+                    <header class="header" style=" z-index: 1">
+                        <div class="header-content">
+                            <img class="header-logo">
+                            <button class="header_menu-toggle"></button>
+                        </div>
+                    </header>
+                    <article class="main-content">
+
+
+
+                        <section class="album-container"  style=" z-index: 1">
+
+
+                            <div class="album-pic">
+                                <p class="album-released">
+                                    <span class="album-name">'The Black parade'</span> - Released May, 2016
+                                </p>
+                                <img class="album-img" src="./Blackparadecover.jpeg">
+                            </div>
+
+
+                            <div class="album-data">
+                                <h1 class="album-data_header">My Chemical Romance</h1>
+                                <p class="album-data_name">The Black Parade</p>
+                                <div class="album-data_buttons">
+                                    <button class="button-animation button_listen-now">
+                                        <img class="button_listen-now_pic" src="./pics/play-button.png">
+                                        <p class="button_listen-now_text">listen now</p>
+                                    </button>
+                                    <button class="button-animation button_share">
+                                        <img class="button_share_pic" src="./pics/share-button.png">
+                                        <p class="button_share_text">share</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                
+                    
+                    
+                    
+                    
+                    
+                    
+
+
+
+                <section class="stream">
+                    <div class="stream-content">
+                        <h2 class="stream-header">stream it your way</h2>
+                        <table class="table-links">
+                            <tbody>
+                                <tr class="table-links">
+                                    <td class=" button table-link"><a href="https://music.apple.com/us/artist/my-chemical-romance/14748659"><img class="music-player" src="./pics/apple.png" alt="apple-music"></a></td>
+                                    <td  class="button table-link"><a href="https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb"><img class="music-player" src="./pics/spotify.png" alt="spotify"></a></td>
+                                    <td  class="button table-link"><a href="https://www.youtube.com/channel/UCCZGYab5SpD0I7Z5JqJZgww"><img class="music-player" src="./pics/yout.png" alt="youtube"></a></td>
+                                    <td  class="button table-link"><a href="https://soundcloud.com/my-chemical-romance"><img class="music-player" src="./pics/sound.png" alt="soundcloud"></a></td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+
+
+                <section class="tracks">
+                    <h2 class="tracks-header">track list</h2>
+                    <table class="tracks-table">
+                        <tr>
+                          <td class="track-number">1</td>
+                          <td class="play-button-td"> <audio src="/tracks/The-End.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button></td>
+                          <td><div class="track-data"> <p class="track-name">The End</p> <p class="track-artist">My Chemical Romance</p></div></td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class=" button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">2</td>
+                          <td class="play-button-td"> <audio src="/tracks/dead.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"></button> </td>
+                          <td><div class="track-data"> <p class="track-name">Dead!</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">3</td>
+                          <td class="play-button-td"> <audio src="/tracks/This-Is-How-I-Disappear.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">This Is How I Dissapear</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">4</td>
+                          <td class="play-button-td"> <audio src="/tracks/The Sharpest Lives [ backingtrackx.com ].mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">The Sharpest Lives</p> <p class="track-artist">My Chemical Romance</p></div></td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">5</td>
+                          <td class="play-button-td"> <audio src="/tracks/Welcome-to-the-Black-Parade (1).mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">Welcome To The Black Parade</p> <p class="track-artist">My Chemical Romance</p></div> </audio></td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">6</td>
+                          <td class="play-button-td"> <audio src="/tracks/I Don't Love You [Official Music Video] [HD]_pyi0ZfuIIvo.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">I Dont't Love You</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">7</td>
+                          <td class="play-button-td"> <audio src="/tracks/My-Chemical-Romance-House-of-Wolves.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">House Of Wolves</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                        </tr>
+                        <tr>
+                          <td class="track-number">8</td>
+                          <td class="play-button-td"> <audio src="/tracks/Cancer_wc2s9skF_58.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                          <td><div class="track-data"> <p class="track-name">Cancer</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                          <td><span id="duration" class="time">0:00</span></td>
+                          <td><button class="button track_share-button"> </button> </td> 
+                          </tr>
+                          <tr>
+                            <td class="track-number">9</td>
+                            <td class="play-button-td"> <audio src="/tracks/Mama.mp3" preload=”metadata” loop></audio> <button  id="play-icon"  class="button play-button"></button> </td>
+                            <td><div class="track-data"> <p class="track-name">Mama</p> <p class="track-artist">My Chemical Romance</p></div></td>
+                            <td><span id="duration" class="time">0:00</span></td>
+                            <td><button class="button track_share-button"> </button> </td> 
+                          </tr>
+                          <tr>
+                            <td class="track-number">10</td>
+                            <td class="play-button-td"> <audio src="/tracks/Disenchanted (Lyrics)_x7g1ppGE1Xs.mp3" preload=”metadata” loop></audio> <button  id="play-icon" class="button play-button"> </button> </td>
+                            <td><div class="track-data"> <p class="track-name">Disenchanted</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                            <td><span id="duration" class="time">0:00</span></td>
+                            <td><button class="button track_share-button"> </button> </td> 
+                          </tr>
+                          <tr>
+                            <td class="track-number">11</td>
+                            <td class="play-button-td">  <audio src="/tracks/Famous-Last-Words.mp3" preload=”metadata” loop></audio><button  id="play-icon" class="button play-button"> </button> </td>
+                            <td><div class="track-data"> <p class="track-name">Famous Last Words</p> <p class="track-artist">My Chemical Romance</p></div> </td>
+                            <td><span id="duration" class="time">0:00</span></td>
+                            <td><button class="button track_share-button"> </button> </td> 
+                          </tr>
+                        </table>
+                </section>
+
+
+
+
+                <section class="video">
+                    
+                    <h2 class="video-header">music video</h2>
+                    <iframe class='iframe' width="100%" height="100%"  src="https://www.youtube-nocookie.com/embed/RRKJiM9Njr8?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </section>
+
+
+
+
+
+                <section class="typed-quotes">
+                  <div id="typed-strings">
+                    <span>All teenagers scare the living shit out of me</span>
+                    <span>The hardest part is letting go of your dreams</span>
+                    <span>Nothing you could say can stop me going home</span>
+                    <span>The sharpest lives are the deadliest to lead</span>
+                </div>
+                
+                <div class="text-typing">
+                    <span id="typed"></span>
+                </div>
+                </section>
+
+
+
+
+                <footer class="footer">
+                    <nav class="footer-navigation">
+                        <div class="footer-about"></div>
+                        <div class="footer-policy"></div>
+                        <div class="footer-info"></div>
+                    </nav>
+                    <div class="footer-links">
+                        <p class="footer-quote"></p>
+                        <div class="footer-sm-links">
+                            
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
+
+        <div class="popup popup-invisible">
+
+            <div class="popup__container">
+              <div class="popup-album">
+                  <img class="popup-img" src="./Blackparadecover.jpeg">
+                  <div class="popup-description">
+                    <p class="album-song"></p>
+                    <p class="artist">The Black Parade</p>
+                  </div>
+                  
+              </div>
+
+
+
+              <div class="popup-player">
+                <div class="popup-buttons">
+                  <button class="button-animation button-track button-prev-track"><img class="track-image" src="./pics/prevTrack.png"></button>
+                  <button id="popupPlayButton" class="  popupButtonAnimation pause-popup-button"></button>
+                  <button class="button-animation button-track button-next-track"><img class="track-image" src="./pics/nextTrack.png"></button>
+                </div>
+                <div class="slider">
+                  <span id="current-time" class="time-popup-duration">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                
+                <span id="duration duration-popup" class="time-popup">0:00</span>
+                </div>
+                
+              </div>
+
+
+
+
+              <div class="popup-volume">
+                
+                <input type="range" id="volume-slider" max="100" value="100">
+                <button class="mute-icon" id="mute-icon"></button>
+            </div>
+            </div>
+
+           
+
+        </div>
+        
+        <script type="module" src="./script.js"></script>
+    </body>
+</html>
+
+
+<!-- <div id="audio-player-container">
+    <p>audio player</p>
+    <audio src="my-favourite-song.mp3" preload="metadata" loop></audio>
+    <button id="play-icon"></button>
+    <span id="current-time" class="time">0:00</span>
+    <input type="range" id="seek-slider" max="100" value="0">
+    <span id="duration" class="time">0:00</span>
+    <output id="volume-output">100</output>
+    <input type="range" id="volume-slider" max="100" value="100">
+    <button id="mute-icon"></button>
+  </div>
+<script type="module" src="./script.js"></script> -->

@@ -1,0 +1,881 @@
+html {
+    background-color: black;
+    background-image: url(./pics/backgrscreen.png);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    overflow-x: hidden;
+    
+   
+}
+html:after {
+    /* animation: grain 3s steps(100) infinite;
+    background-image: url("./pics/backgrscreen.png");
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.3;
+    position: fixed;
+    top: -100%;
+    width: 300%; */
+    /* content: "";
+    position: fixed;
+    height: 300%;
+    width: 300%;
+    top: -100%;
+    left: -50%;
+    opacity: 0.5;
+    
+    -webkit-animation: grain 8s steps(10) infinite;
+    -moz-animation: grain 8s steps(10) infinite;
+    -o-animation: grain 8s steps(10) infinite;
+    animation: grain 8s steps(10) infinite;
+    z-index: -2; */
+}
+/* @keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0%) }
+    70% { transform:translate(0%, 15%) }
+    80% { transform:translate(3%, 35%) }
+    90% { transform:translate(-10%, 10%) }
+  } */
+/* body {
+    background-color: black;
+    background-image: url(./pics/10E0E3DC-D61B-4A37-987F-B8810996A346.jpeg);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    overflow-x: hidden;
+    z-index: -2;
+} */
+.page {
+    /* background-color: rgba(31, 31, 31, 1); */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    
+    
+}
+
+
+
+@font-face {
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: 100;
+    src: url('./MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf'),
+       
+  }
+  
+  @font-face {
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./MonumentExtended-FreeForPersonalUse/MonumentExtended-Ultrabold.otf')
+        
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./Montserrat-ExtraLightItalic.ttf');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./Montserrat-Light.ttf');
+    font-weight:lighter;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./Montserrat-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
+
+ /* .header {
+    background: url("./background.jpeg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 100vh;
+
+ } */
+  
+
+
+ /* .album-container, header {
+    background: url("./background.jpeg") no-repeat;
+    background-size: contain;
+    background-position: center;
+
+
+
+
+    !!!!1
+    background: url("./background.jpeg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+ } */
+
+/* 
+
+.background-image {
+
+    background: url("./background.jpeg") no-repeat;
+    background-size: contain;
+    background-position: center;
+} */
+
+
+.background {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+
+
+.background-page {
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+}
+.background-poster {
+    width: 102%;
+    height: 102%;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px) brightness(50%);
+    z-index: -1;
+}
+
+.header {
+    /* position: absolute; */
+    height: 30px;
+    width: 90%;
+    z-index: 1;
+    background-color: aliceblue;
+    /* position: relative; */
+}
+
+
+
+ 
+.album-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    max-width: 80%;
+    min-height: 408px;
+    margin: 100px auto;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+}
+@media screen and (max-width: 914px) {
+    .al {
+      width: 88%;
+    }
+  }
+  
+
+.album-pic {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
+    
+    
+}
+
+.album-released {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14px;
+    margin: 0 0 auto 15px;
+    max-width:400px;
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+    color: aliceblue;
+}
+
+
+.album-img {
+    
+    width: 408px;
+    height: 408px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    padding: 0 3rem 0 10px ;
+}
+
+.album-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    margin: auto auto auto 0;
+}
+
+.album-data_header {
+    font-family:  'Monument Extended';
+    font-style: normal;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F1F1F1;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3rem;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.album-data_name {
+    font-family:  'Monument Extended';
+    font-style: normal;
+    text-transform: uppercase;
+    color: aliceblue;
+    letter-spacing: 0.1rem;
+    font-size: 20px;
+    margin: 0 auto 50px 0;
+}
+
+.album-data_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.button_listen-now {
+    min-width: 215px;
+    background-color: aliceblue;
+    padding: 0;
+    border: none;
+    height: 53px;
+    margin: 0 40px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    
+}
+.button_share_pic {
+    width: 13px;
+}
+
+.button_listen-now_pic {
+    width: 13px;
+}
+
+
+
+.button-animation {
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+.button-animation:hover{
+
+    transform: scale(1.1)
+}
+.button {
+    transition: transform .2s;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+.button_share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    min-width: 150px;
+    border: 1px solid aliceblue; 
+    background-color: transparent;
+    height: 53px;
+    color: aliceblue;
+    cursor: pointer;
+    margin: auto auto auto 0;
+}
+
+.button_listen-now_text {
+    color: black;
+    font-family:  'Monument Extended';
+    font-size: 14px;
+    padding: 0;
+    margin: auto;
+   
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+    text-decoration: none;
+
+}
+
+.button_share_text {
+    color: aliceblue;
+    font-family:  'Monument Extended';
+    font-size: 14px;
+    margin: auto;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+}
+
+.stream {
+    max-width: 75%;
+    margin: auto auto;
+}
+
+.stream-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 35px;
+    font-family: 'Monument Extended';
+    color: aliceblue;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+}
+
+.table-links {
+    border: 1px solid aliceblue;
+    border-collapse: collapse;
+    width: 440px;
+    height: 60px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-link {
+    border: 1px solid aliceblue;
+}
+
+table {
+    table-layout: auto;
+}
+/* .album-container {
+    width: 960px;
+    margin: auto auto;
+    height: 440px;
+    background-image: url(./background-pic.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.album-pic {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.album-img {
+    width:408px;
+    height:408px;
+    background-image: url(./MCRThreeCheers.jpeg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.album-data {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.album-released {
+    transform: rotate(90deg);
+    margin: 0;
+    padding: 0;
+} */
+/* table {
+    width: 440px;
+    height: 60px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    padding: 0;
+} */
+
+/* th, td {
+    padding: auto;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+   
+} */
+
+.music-player {
+    width: 15px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px;
+    outline: none;
+}
+
+
+.video {
+    width: 75%;
+    margin: auto;
+}
+
+.iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: 100%;
+}
+
+.tracks {
+    width: 75%;
+    margin: auto;
+}
+
+.tracks-table {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    width: 100%;
+    border: none;
+}
+
+.track_share-button{
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+   background-image: url(./pics/share-button.png);
+   background-color: transparent;
+   background-size: contain;
+   border: none;
+   background-repeat: no-repeat;
+}
+
+.track-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 16px 8px 16px 0;
+}
+
+.track-name {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 0 20px;
+}
+
+.track-artist{
+    font-family: 'Montserrat';
+    font-size: 13px;
+    font-weight: 100;
+    margin:0 0 0  20px;
+    color: rgba(156, 156, 156, 1)
+}
+.play-button{
+  border: none;
+  outline: none; 
+  margin: auto ;
+  cursor: pointer;
+  padding: 0px;
+ border-style: none;
+ width: 25px;
+ height: 25px;
+  /* background-image: url(./pics/play-button.png); */
+  
+  background-size: cover;
+ 
+  
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+.play-button-td {
+    width: 70px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.text-typing {
+    font-family: 'Montserrat';
+    font-size: 50px;
+    color: aliceblue;
+    width: 75%;
+    align-items: center;
+    margin: 100px auto;
+    min-height: 200px;
+    text-align: center
+}
+
+
+
+
+
+
+
+
+
+
+/* .pause-button {
+    border: none;
+  outline: none;
+  margin: auto 16px  auto auto;
+  cursor: pointer;
+  padding: 0px;
+ border-style: none;
+  width: 15px;
+  height: 18px;
+  background-image: url(./pics/pause-button.png);
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+ 
+  
+  text-decoration: none;
+  background-color: transparent;
+} */
+
+
+.track-number {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+}
+
+path {
+    stroke: aliceblue;
+   
+}
+
+
+.popup {
+    width: 100%;
+    background-color:#F08080;
+    height: 80px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+}
+.popup-invisible {
+    display: none;
+}
+.popup__container {
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    margin: auto ;
+    align-items:center;
+  
+   box-sizing: border-box;
+   
+}
+
+.popup-album {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:  auto 0 ;
+    min-width: 250px;
+    box-sizing: border-box;
+}
+.popup-description {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 20px 10px;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
+   
+}
+.popup-img {
+    width: 50px;
+    height: 50px;
+    margin: auto 0;
+    border-radius: 5px
+}
+.artist {
+    color: rgba(156, 156, 156, 1);
+    font-family: 'Montserrat';
+    font-size: 10px;
+    margin: 5px auto auto 0;
+}
+.album-song {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    margin: 0;
+    font-size: 13px;
+}
+
+
+.button-track {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.track-image {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+
+.pause-popup-button {
+    width: 38px;
+    height: 38px;
+    background-image: url(./pics/pause-popup-button.png);
+    background-color: transparent;
+    border-style: none;
+    padding: 10;
+    margin: auto 15px;
+    border-style: none;
+    object-fit: cover;
+    background-size: cover;
+    transition: transform .2s;
+    overflow: hidden;
+}
+.play-popup-button {
+    width: 38px;
+    height: 38px;
+    background-image: url(./pics/play-pause-popup.png);
+    background-color: transparent;
+    border-style: none;
+    padding: 10px;
+    margin: auto 15px;
+    border-style: none;
+    object-fit: contain;
+    background-size: contain;
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+.play-popup-button:hover {
+    transform: scale(1.1)
+}
+.pause-popup-button:hover {
+    transform: scale(1.1)
+}
+.mute-icon {
+    background-color: transparent;
+    border-style: none;
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+}
+
+/* .pause-button-popup-img {
+    width: 36px;
+    height: 36px;
+    background-image: url(./pics/pause-popup-button.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-style: none;
+    
+} */
+
+
+.popup-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    min-width: 200px;
+    margin: 15px auto 0;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 15px;
+    width: 100%;
+}
+.popup-player {
+    --seek-before-width: 0%;
+  --volume-before-width:0%;
+  --buffered-width: 0%;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  background:#F08080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-volume {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.time-popup {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    display: inline-block;
+    width: 37px;
+    text-align: center;
+    font-size: 10px;
+    margin: auto 0 ;
+
+}
+
+.time-popup-duration {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 10px;
+    margin: auto 0 ;
+}
+output {
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 2.5% 0 5%;
+   
+    clear: left;
+    color: aliceblue;
+    font-family: 'Montserrat';
+}
+#volume-slider {
+    margin: 10px 2.5%;
+    width: 58%;
+}
+#volume-slider::-webkit-slider-runnable-track {
+    background: aliceblue;
+}
+
+
+#volume-slider::before {
+    width: var(--volume-before-width);
+}
+
+input[type="range"] {
+    position: relative;
+    -webkit-appearance: none;
+    width: 80%;
+    margin: auto 20px;
+    padding: 0;
+    height: 22px;
+    margin: auto 2.5% ;
+    float: left;
+    outline: none;
+    background-color:#F08080;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    background: linear-gradient(to right,  #afafaf  var(--buffered-width), rgb(165, 165, 165) var(--buffered-width));
+}
+input[type="range"]::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0;
+    width: var(--seek-before-width);
+    height: 2px;
+    background-color:aliceblue;
+    cursor: pointer;
+}
+
+
+/* СТИЛИ ДЛЯ КНОПКИ */
+input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    /* border: 1px solid aliceblue; */
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    cursor: pointer;
+    margin: -6px 0 0 0;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
