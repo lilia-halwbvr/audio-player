@@ -9,7 +9,17 @@ function calculateTime (secs) {
   return `${minutes}:${returnedSeconds}`;
 }
 
+
+
+
+
+
+
+
 let currentSong = null;
+
+
+
 
 const popupPlayer = document.querySelector('.popup-player')
 
@@ -52,6 +62,7 @@ for (let i = 0; i < songsCount; i++) {
       this.animation.playSegments([14, 27], true)
       this.state = 'pause'
       this.renderPlay()
+      
       popupPlayButton.classList.remove('play-popup-button')
       popupPlayButton.classList.add('pause-popup-button')
       
@@ -61,6 +72,7 @@ for (let i = 0; i < songsCount; i++) {
       this.audio.currentTime = 0;
       this.animation.playSegments([0, 14], true);
       this.state = 'play';
+      
       popupPlayButton.classList.remove('pause-popup-button')
       popupPlayButton.classList.add('play-popup-button')
       
@@ -82,24 +94,48 @@ for (let i = 0; i < songsCount; i++) {
       const bufferedAmount = Math.floor(this.audio.buffered.end(this.audio.buffered.length - 1));
       popupPlayer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
     },
+
+    mute: function() {
+      if(muteState === 'unmute') {
+        muteAnimation.playSegments([0, 15], true);
+        this.audio.muted = true;
+        muteState = 'mute';
+      } else {
+        muteAnimation.playSegments([15, 25], true);
+        this.audio.muted = false;
+        muteState = 'unmute';
+      }
+      
+    }
+
+     
     
 
   })
 }
 
 
-const currentTimeContainer = document.getElementById('current-time');
 
-seekSlider.addEventListener('input', () => {
-  currentTimeContainer.textContent = calculateTime(seekSlider.value);
+
+
+
+
+
+
+
+
+
+
+volumeSlider.addEventListener('input', () => {
+  // Обновление громкости аудио
+  const volume = volumeSlider.value / volumeSlider.max;
+  songs.forEach((song) => {
+    song.audio.volume = volume;
+  });
+
+  // Обновление позиции ползунка громкости
+  showRangeProgress(volumeSlider);
 });
-
-
-
-
-
-
-
 
 
 
@@ -148,12 +184,31 @@ songs.forEach((song, i) => {
       song.setSliderMax()
       song.displaybufferedAmount()
       song.play()
+                       
     } else {
       song.stop()
+                       
       
     }
+
+
   })
 })
+
+
+
+
+
+
+
+// MUTE BUTTON
+const currentTimeContainer = document.getElementById('current-time');
+
+seekSlider.addEventListener('input', () => {
+  currentTimeContainer.textContent = calculateTime(seekSlider.value);
+});
+
+
 
 
 const muteIconContainer = document.getElementById('mute-icon');
@@ -167,17 +222,11 @@ const muteAnimation = lottieWeb.loadAnimation({
   name: "Mute Animation",
 });
 
-
-
 muteIconContainer.addEventListener('click', () => {
-  if(muteState === 'unmute') {
-      muteAnimation.playSegments([0, 15], true);
-      muteState = 'mute';
-  } else {
-      muteAnimation.playSegments([15, 25], true);
-      muteState = 'unmute';
-  }
+  currentSong.mute()
 });
+
+
 
 
 
@@ -203,6 +252,8 @@ function onPause(event) {
     event.target.classList.remove('play-popup-button')
     event.target.classList.add('pause-popup-button')
   }
+
+  
 }
 
 popupPlayButton.addEventListener('click', onPause)
@@ -368,6 +419,34 @@ window.addEventListener("load", function() {
 
 
 
+
+
+
+
+
+
+
+
+// toogle menu 
+const menuToggle = document.querySelector('.header_menu-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+
+menuToggle.addEventListener('click', function() {
+  
+  document.querySelector('.header').classList.toggle('menu-open');
+});
+
+
+document.addEventListener('click', function(event) {
+  const target = event.target;
+  const isMenuClicked = dropdownMenu.contains(target) || menuToggle.contains(target);
+
+  
+  if (!isMenuClicked) {
+    document.querySelector('.header').classList.remove('menu-open');
+  }
+});
 
 
 
