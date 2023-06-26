@@ -177,19 +177,48 @@ button:hover {
 .dropdown-menu {
     position: fixed;
     top: 0;
-    right: -20%; /* Начальная позиция меню за пределами экрана */
+    right: -20%; 
     width: 20%;
     height: 100vh;
     background-color: black;
-    transition: right 0.3s; /* Плавное изменение свойства right */
+    transition: right 0.3s; 
     overflow: hidden;
     z-index: 40;
   }
   
   .menu-open .dropdown-menu {
-    right: 0; /* Конечная позиция, полностью видимое меню */
+    right: 0; 
   }
   
+
+  .list-social-header {
+    font-size: 18px;
+    list-style: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 0;
+    width: 50px;
+    text-align: center;
+    pointer-events: initial;
+    margin-right: 1.5rem;
+    z-index: -1;
+}
+
+.list-img {
+    width: 20px;
+    
+    margin: 10px;
+}
+
+
+
+.list-link {
+    width: 25px;
+    height: 20px;
+    padding: 10px;
+    
+}
 
 
 

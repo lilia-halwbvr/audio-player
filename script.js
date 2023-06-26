@@ -15,7 +15,6 @@ function calculateTime (secs) {
 
 
 
-
 let currentSong = null;
 
 
@@ -55,24 +54,25 @@ for (let i = 0; i < songsCount; i++) {
     audio: audios[i],
     durationContainer: durationContainers[i],
     playButton,
+    pausedTime: 0, 
     animation,
     name: songsNames[i].outerText,
     play: function() {
+      this.audio.currentTime = this.pausedTime;
       this.audio.play()
       this.animation.playSegments([14, 27], true)
       this.state = 'pause'
       this.renderPlay()
-      
       popupPlayButton.classList.remove('play-popup-button')
       popupPlayButton.classList.add('pause-popup-button')
       
     },
     stop: function() {
+      this.pausedTime = this.audio.currentTime; 
       this.audio.pause();
       this.audio.currentTime = 0;
       this.animation.playSegments([0, 14], true);
       this.state = 'play';
-      
       popupPlayButton.classList.remove('pause-popup-button')
       popupPlayButton.classList.add('play-popup-button')
       
@@ -186,7 +186,9 @@ songs.forEach((song, i) => {
       song.play()
                        
     } else {
+      
       song.stop()
+
                        
       
     }
