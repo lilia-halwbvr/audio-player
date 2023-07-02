@@ -22,17 +22,17 @@ html {
 
 @font-face {
     font-family: 'Monument Extended';
-    font-style: normal;
-    font-weight: 100;
-    src: url('./MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf'),
+   
+    font-weight: 400; 
+    src: url('./PPMonumentExtended-Regular.otf'),
        
   }
   
   @font-face {
     font-family: 'Monument Extended';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./MonumentExtended-FreeForPersonalUse/MonumentExtended-Ultrabold.otf')
+   
+    font-weight: 900;
+    src: url('./PPMonumentExtended-Black.otf')
         
   }
 
@@ -143,6 +143,7 @@ html {
     position: relative;
     align-items: center;
     height: 50px;
+    margin: auto;
     
 
 }
@@ -179,11 +180,15 @@ button:hover {
     top: 0;
     right: -20%; 
     width: 20%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+   overflow: hidden;
     background-color: black;
     transition: right 0.3s; 
-    overflow: hidden;
-    z-index: 40;
+    
+    z-index: 10;
+    
+   
   }
   
   .menu-open .dropdown-menu {
@@ -200,10 +205,27 @@ button:hover {
     padding: 0;
     width: 50px;
     text-align: center;
-    pointer-events: initial;
+
     margin-right: 1.5rem;
     z-index: -1;
 }
+
+.list-social-header-drop {
+    font-size: 18px;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    padding: 25px 0 0 0;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 .list-img {
     width: 20px;
@@ -219,6 +241,134 @@ button:hover {
     padding: 10px;
     
 }
+
+
+.dropdown-menu-header {
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.dropdown-menu-logo {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 0 ;
+}
+
+
+
+.dropdown-menu_header {
+    font-size: 15px;
+    margin: 0 30px 0 0 ;
+    
+}
+
+.close-menu {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.img-dropdown-menu {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+}
+
+.dropdown-menu-list {
+    width: 90%;
+    color: aliceblue;
+    list-style: none;
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: 400; 
+    font-size: 20px;
+    margin: 50px 30px 0;
+    padding: 0;
+    height: 600px;
+    overflow: scroll;
+    
+}
+
+
+.dropdown-menu-item{
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    list-style-type: none;
+    position: relative; /* Добавляем позиционирование */
+    line-height: 1.5; 
+     
+}
+
+
+
+
+
+
+.sub-menu {
+    display: none;
+    text-decoration: none;
+    padding-top: 16px;
+   
+  }
+
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: transform 0.5s ease;
+  }
+
+.toogle-button-img{
+    width: 7px;
+    height: 12px;
+    background-color: transparent;
+    margin-left: 10px;
+    padding: 0;
+}
+/* .toogle-button-img:hover {
+    transform: rotate(90deg);
+} */
+
+
+li {
+    list-style-type: none;
+}
+
+
+.sub-item {
+    margin-bottom: 16px;
+    color: #C4C4C4;
+    font-size: 14px;
+
+}
+
+
+
+.sub-item:hover {
+    color: #e0e0e0;
+}
+
+
+ .custom-toast .toastify-toast {
+      background-color: aliceblue;
+    }
+    .custom-toast .toastify-content {
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+    }
+  
+
+
+
 
 
 
@@ -246,12 +396,9 @@ button:hover {
     position: relative;
     box-sizing: border-box;
     align-items: center;
+    z-index: 0;
 }
-@media screen and (max-width: 914px) {
-    .al {
-      width: 88%;
-    }
-  }
+
   
 
 .album-pic {
@@ -296,11 +443,12 @@ button:hover {
    
     box-sizing: border-box;
     width: 50%;
+    z-index: 1;
 }
 
 .album-data_header {
     font-family:  'Monument Extended';
-    font-style: normal;
+    font-weight: 400; 
     text-transform: uppercase;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #F1F1F1;
@@ -309,6 +457,7 @@ button:hover {
     line-height: 1;
     font-weight: 500;
     font-size: calc((100vw - 320px)/(1280 - 320) * (48 - 35) + 35px);
+    z-index: 1;
 }
 
 .album-data_name {
@@ -339,7 +488,7 @@ button:hover {
     margin: 0 20px 0 0;
     cursor: pointer;
     display: flex;
-    padding: 10px;
+   
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
@@ -421,12 +570,8 @@ button:hover {
 .button_share:hover .button_share_pic {
     background-image: url(./pics/button-share-hover.png); /* Изменение картинки */
    
-  }
+}
   
-
-
-
-
 
 
 
@@ -670,6 +815,151 @@ table {
     min-height: 200px;
     text-align: center
 }
+
+
+
+
+.footer {
+    width: 100%;
+}
+.mb-normal {
+    margin-bottom: 1rem; 
+    width: 75%;
+    /* Задаем отступ снизу */
+  }
+  .mt-xxlarge {
+    margin-top: 3rem; /* Задаем отступ сверху */
+  }
+  .thin-divider {
+    border-width: 0.5px; /* Задм толщину линии разделителя */
+  }
+.footer-navigation {
+    
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    color: aliceblue;
+    font-family: 'Monument Extended';
+    margin: 50px auto;
+}
+.footer-nav-about {
+    padding: 0;
+    margin: 0;
+}
+.footer-nav-policy {
+    padding: 0;
+    margin: 0;
+}
+.footer-nav-sub{
+    padding: 0;
+    margin: 0;
+}
+.about {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.policy {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.sub-mcr{
+    color: #898888;
+    margin-bottom: 15px;
+}
+.sub {
+    color: #898888;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+
+.quote {
+    color: #898888;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    letter-spacing: 0.1em;
+    margin: 30px auto 0;
+    width: 75%;
+    text-align: center;
+
+}
+
+.quote-author {
+    color: #bcbcbc;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    letter-spacing: 0.1em;
+    margin: 15px auto;
+    width: 75%;
+    text-align: center;
+}
+
+
+
+a {
+    cursor: pointer;
+}
+.signup-input {
+    margin: 25px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px #3e3b3c;
+   
+    
+}
+.input-bordered {
+    background-color: transparent;
+   
+    padding-bottom: 0.5rem;
+    border: none;
+    color: aliceblue; 
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.form-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+input:focus {
+    outline: none; /* Убираем обводку при фокусе */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

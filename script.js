@@ -155,9 +155,6 @@ volumeSlider.addEventListener('input', () => {
 
 
 
-
-
-
 //library for TYPING TEXT BLOCK
 
 let typed = new Typed('#typed', {
@@ -419,10 +416,29 @@ window.addEventListener("load", function() {
 });
 
 
-
-
-
-
+// Пример отображения уведомления
+buttonShare.forEach(function(button) {
+  button.addEventListener('click', function() {
+    
+    // Отображаем уведомление
+    Toastify({
+      text: "'http://127...' successfully copied!",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style: {
+        
+        fontFamily: "'Montserrat', sans-serif",
+        background: "aliceblue",
+        color: 'black',
+        fontSize: "15px",
+        
+        
+     
+      },
+    }).showToast();
+  });
+});
 
 
 
@@ -433,52 +449,55 @@ window.addEventListener("load", function() {
 const menuToggle = document.querySelector('.header_menu-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
-
 menuToggle.addEventListener('click', function() {
-  
   document.querySelector('.header').classList.toggle('menu-open');
 });
-
 
 document.addEventListener('click', function(event) {
   const target = event.target;
   const isMenuClicked = dropdownMenu.contains(target) || menuToggle.contains(target);
-
   
   if (!isMenuClicked) {
     document.querySelector('.header').classList.remove('menu-open');
   }
 });
 
+const toggleButtons = document.querySelectorAll('.toggle-button');
+
+
+toggleButtons.forEach(button => {
+  const subMenu = button.nextElementSibling;
+  subMenu.style.display = 'none';
+  button.addEventListener('click', () => {
+    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+  });
+});
+
+let subClose = document.querySelector('.close-menu')
+
+subClose.addEventListener('click',  () => {
+  document.querySelector('.header').classList.remove('menu-open');
+})
 
 
 
 
 
+toggleButtons.forEach((toggleButton) => {
+  let rotation = 0;
+  let isRotated = false;
 
+  toggleButton.addEventListener("click", () => {
+    if (!isRotated) {
+      rotation += 90;
+      toggleButton.style.transform = `rotate(${rotation}deg)`;
+    } else {
+      rotation -= 90;
+      toggleButton.style.transform = `rotate(${rotation}deg)`;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    isRotated = !isRotated;
+  });
+});
 
 
