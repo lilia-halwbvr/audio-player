@@ -16,6 +16,7 @@ function calculateTime (secs) {
 
 
 let currentSong = null;
+let currentPopupSong = null;
 
 
 
@@ -57,26 +58,33 @@ for (let i = 0; i < songsCount; i++) {
     pausedTime: 0, 
     animation,
     name: songsNames[i].outerText,
-    play: function() {
-      this.audio.currentTime = this.pausedTime;
-      this.audio.play()
-      this.animation.playSegments([14, 27], true)
-      this.state = 'pause'
-      this.renderPlay()
-      popupPlayButton.classList.remove('play-popup-button')
-      popupPlayButton.classList.add('pause-popup-button')
-      
-    },
-    stop: function() {
-      this.pausedTime = this.audio.currentTime; 
-      this.audio.pause();
-      this.audio.currentTime = 0;
-      this.animation.playSegments([0, 14], true);
-      this.state = 'play';
-      popupPlayButton.classList.remove('pause-popup-button')
-      popupPlayButton.classList.add('play-popup-button')
-      
-    }, 
+    isPlaying: false, // Добавить переменную isPlaying
+  play: function() {
+    this.audio.currentTime = this.pausedTime;
+    this.audio.play();
+    this.animation.playSegments([14, 27], true);
+    this.state = 'pause';
+    this.renderPlay();
+    popupPlayButton.classList.remove('play-popup-button');
+    popupPlayButton.classList.add('pause-popup-button');
+    this.isPlaying = true; 
+    songs.forEach((song) => {
+      if (song.id !== this.id) {
+        song.pausedTime = 0;
+        song.isPlaying = false;
+      }
+    });
+  },
+  stop: function() {
+    this.pausedTime = this.audio.currentTime;
+    this.audio.pause();
+    this.audio.currentTime = 0;
+    this.animation.playSegments([0, 14], true);
+    this.state = 'play';
+    popupPlayButton.classList.remove('pause-popup-button');
+    popupPlayButton.classList.add('play-popup-button');
+    this.isPlaying = false;
+  },
     renderPlay: function() {
       let popup = document.querySelector('.popup')
       popup.classList.remove('popup-invisible')
@@ -85,6 +93,7 @@ for (let i = 0; i < songsCount; i++) {
       let songDuration = document.querySelector('.time-popup')
       songDuration.textContent = calculateTime(this.audio.duration)
       currentSong = this
+      currentPopupSong = this
     },
     setSliderMax: function() {
       seekSlider.max = Math.floor(this.audio.duration)
@@ -106,11 +115,16 @@ for (let i = 0; i < songsCount; i++) {
         muteState = 'unmute';
       }
       
+    },
+    whilePlaying: function() {
+      if (this.isPlaying) { 
+        seekSlider.value = Math.floor(this.audio.currentTime);
+        currentTimeContainer.textContent = calculateTime(seekSlider.value);
+        popupPlayer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
+        raf = requestAnimationFrame(() => this.whilePlaying());
+      }
     }
-
-     
     
-
   })
 }
 
@@ -169,6 +183,17 @@ let typed = new Typed('#typed', {
 
 
 
+
+
+const currentTimeContainer = document.getElementById('current-time');
+
+seekSlider.addEventListener('input', () => {
+  currentTimeContainer.textContent = calculateTime(seekSlider.value);
+});
+
+
+let raf = null;
+
 songs.forEach((song, i) => {
   song.playButton.addEventListener('click',  () => {
 
@@ -180,11 +205,13 @@ songs.forEach((song, i) => {
       .forEach(track => track.stop())
       song.setSliderMax()
       song.displaybufferedAmount()
+      requestAnimationFrame(() => song.whilePlaying());
       song.play()
                        
     } else {
       
       song.stop()
+      cancelAnimationFrame(raf);
 
                        
       
@@ -201,11 +228,7 @@ songs.forEach((song, i) => {
 
 
 // MUTE BUTTON
-const currentTimeContainer = document.getElementById('current-time');
 
-seekSlider.addEventListener('input', () => {
-  currentTimeContainer.textContent = calculateTime(seekSlider.value);
-});
 
 
 
@@ -247,6 +270,7 @@ function onPause(event) {
     event.target.classList.remove('pause-popup-button')
     event.target.classList.add('play-popup-button')
   } else {
+    
     currentSong.play()
     event.target.classList.remove('play-popup-button')
     event.target.classList.add('pause-popup-button')
