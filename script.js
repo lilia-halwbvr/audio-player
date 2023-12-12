@@ -28,12 +28,12 @@ const volumeSlider = document.getElementById('volume-slider');
 const audios = document.querySelectorAll('audio')
 
 const songsCount = audios.length
-const songsNames = document.querySelectorAll('.track-name')
+const songsNames = document.querySelectorAll('.tracks__name')
 
 const songs = []
 
-const durationContainers = document.querySelectorAll('.time')
-const playIconContainers = document.querySelectorAll('.play-button');
+const durationContainers = document.querySelectorAll('.tracks__time')
+const playIconContainers = document.querySelectorAll('.tracks__play-button');
 
 for (let i = 0; i < songsCount; i++) {
   const playButton = playIconContainers[i]
@@ -59,71 +59,70 @@ for (let i = 0; i < songsCount; i++) {
     animation,
     name: songsNames[i].outerText,
     isPlaying: false, // Добавить переменную isPlaying
-  play: function() {
-    this.audio.currentTime = this.pausedTime;
-    this.audio.play();
-    this.animation.playSegments([14, 27], true);
-    this.state = 'pause';
-    this.renderPlay();
-    popupPlayButton.classList.remove('play-popup-button');
-    popupPlayButton.classList.add('pause-popup-button');
-    this.isPlaying = true; 
-    songs.forEach((song) => {
-      if (song.id !== this.id) {
-        song.pausedTime = 0;
-        song.isPlaying = false;
-      }
-    });
-  },
-  stop: function() {
-    this.pausedTime = this.audio.currentTime;
-    this.audio.pause();
-    this.audio.currentTime = 0;
-    this.animation.playSegments([0, 14], true);
-    this.state = 'play';
-    popupPlayButton.classList.remove('pause-popup-button');
-    popupPlayButton.classList.add('play-popup-button');
-    this.isPlaying = false;
-  },
-    renderPlay: function() {
-      let popup = document.querySelector('.popup')
-      popup.classList.remove('popup-invisible')
-      let songName = document.querySelector('.album-song')
-      songName.textContent = this.name
-      let songDuration = document.querySelector('.time-popup')
-      songDuration.textContent = calculateTime(this.audio.duration)
-      currentSong = this
-      currentPopupSong = this
+    play: function() {
+      this.audio.currentTime = this.pausedTime;
+      this.audio.play();
+      this.animation.playSegments([14, 27], true);
+      this.state = 'pause';
+      this.renderPlay();
+      popupPlayButton.classList.remove('play-popup-button');
+      popupPlayButton.classList.add('pause-popup-button');
+      this.isPlaying = true; 
+      songs.forEach((song) => {
+        if (song.id !== this.id) {
+          song.pausedTime = 0;
+          song.isPlaying = false;
+        }
+      });
     },
-    setSliderMax: function() {
-      seekSlider.max = Math.floor(this.audio.duration)
+    stop: function() {
+      this.pausedTime = this.audio.currentTime;
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      this.animation.playSegments([0, 14], true);
+      this.state = 'play';
+      popupPlayButton.classList.remove('pause-popup-button');
+      popupPlayButton.classList.add('play-popup-button');
+      this.isPlaying = false;
     },
-    displaybufferedAmount: function() {
-      
-      const bufferedAmount = Math.floor(this.audio.buffered.end(this.audio.buffered.length - 1));
-      popupPlayer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
-    },
+      renderPlay: function() {
+        let popup = document.querySelector('.popup')
+        popup.classList.remove('popup-invisible')
+        let songName = document.querySelector('.album-song')
+        songName.textContent = this.name
+        let songDuration = document.querySelector('.time-popup')
+        songDuration.textContent = calculateTime(this.audio.duration)
+        currentSong = this
+        currentPopupSong = this
+      },
+      setSliderMax: function() {
+        seekSlider.max = Math.floor(this.audio.duration)
+      },
+      displaybufferedAmount: function() {
+        const bufferedAmount = Math.floor(this.audio.buffered.end(this.audio.buffered.length - 1));
+        popupPlayer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
+      },
 
-    mute: function() {
-      if(muteState === 'unmute') {
-        muteAnimation.playSegments([0, 15], true);
-        this.audio.muted = true;
-        muteState = 'mute';
-      } else {
-        muteAnimation.playSegments([15, 25], true);
-        this.audio.muted = false;
-        muteState = 'unmute';
+      mute: function() {
+        if(muteState === 'unmute') {
+          muteAnimation.playSegments([0, 15], true);
+          this.audio.muted = true;
+          muteState = 'mute';
+        } else {
+          muteAnimation.playSegments([15, 25], true);
+          this.audio.muted = false;
+          muteState = 'unmute';
+        }
+        
+      },
+      whilePlaying: function() {
+        if (this.isPlaying) {
+          seekSlider.value = Math.floor(this.audio.currentTime);
+          currentTimeContainer.textContent = calculateTime(seekSlider.value);
+          popupPlayer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
+          raf = requestAnimationFrame(() => this.whilePlaying());
+        }
       }
-      
-    },
-    whilePlaying: function() {
-      if (this.isPlaying) { 
-        seekSlider.value = Math.floor(this.audio.currentTime);
-        currentTimeContainer.textContent = calculateTime(seekSlider.value);
-        popupPlayer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
-        raf = requestAnimationFrame(() => this.whilePlaying());
-      }
-    }
     
   })
 }
@@ -152,18 +151,42 @@ volumeSlider.addEventListener('input', () => {
 });
 
 
+// seekSlider.addEventListener('input', () => {
+//   const seekTime = seekSlider.value;
+//   currentTimeContainer.textContent = calculateTime(seekTime);
+
+//   if (currentSong) {
+//     const audio = audios[currentSong.id];
+//     audio.currentTime = seekTime;
+//   }
+// });
+
+
+
+seekSlider.addEventListener('input', () => {
+  const audio = audios[currentSong.id];
+  currentTimeContainer.textContent = calculateTime(seekSlider.value);
+  if(!audio.paused) {
+    cancelAnimationFrame(raf);
+  }
+});
+
+seekSlider.addEventListener('change', () => {
+  const audio = audios[currentSong.id];
+  audio.currentTime = seekSlider.value;
+  if (!audio.paused) {
+    requestAnimationFrame(() => currentSong.whilePlaying());
+  } else {
+    currentSong.pausedTime = seekSlider.value;
+  }
+});
 
 
 
 
 
 
-
-
-
-
-
-
+ 
 
 
 
@@ -222,6 +245,63 @@ songs.forEach((song, i) => {
 })
 
 
+//functionality on Button Listen Now
+const listenNowButton = document.querySelector('.album__button-listen');
+
+listenNowButton.addEventListener('click', () => {
+  if (songs.length >= 0) {
+    
+    const firstSong = songs[0];
+    songs.filter(track => track.state === 'pause')
+      
+      .forEach(track => track.stop())
+      firstSong.setSliderMax()
+      firstSong.displaybufferedAmount()
+      requestAnimationFrame(() => firstSong.whilePlaying());
+    firstSong.play();
+    
+  } else {
+      
+    firstSong.stop()
+    cancelAnimationFrame(raf);
+    
+  }
+});
+
+
+
+
+let playState = 'play';
+
+const popupPlayButton = document.getElementById('popupPlayButton')
+function onPause(event) {
+  let isOnPause = event.target.classList.contains('pause-popup-button')
+  
+  
+  if(isOnPause) {
+    currentSong.stop()
+    event.target.classList.remove('pause-popup-button')
+    event.target.classList.add('play-popup-button')
+  } else {
+    currentSong.setSliderMax()
+    currentSong.displaybufferedAmount()
+    requestAnimationFrame(() => currentSong.whilePlaying());
+    currentSong.play()
+    event.target.classList.remove('play-popup-button')
+    event.target.classList.add('pause-popup-button')
+  }
+
+  
+}
+
+popupPlayButton.addEventListener('click', onPause)
+
+
+
+
+
+
+
 
 
 
@@ -259,27 +339,6 @@ muteIconContainer.addEventListener('click', () => {
 
 
 
-let playState = 'play';
-
-const popupPlayButton = document.getElementById('popupPlayButton')
-function onPause(event) {
-  let isOnPause = event.target.classList.contains('pause-popup-button')
-  
-  if(isOnPause) {
-    currentSong.stop()
-    event.target.classList.remove('pause-popup-button')
-    event.target.classList.add('play-popup-button')
-  } else {
-    
-    currentSong.play()
-    event.target.classList.remove('play-popup-button')
-    event.target.classList.add('pause-popup-button')
-  }
-
-  
-}
-
-popupPlayButton.addEventListener('click', onPause)
 
 
 
@@ -304,16 +363,7 @@ popupPlayButton.addEventListener('click', onPause)
 
 
 
-//functionality on Button Listen Now
-const listenNowButton = document.querySelector('.button_listen-now');
 
-listenNowButton.addEventListener('click', () => {
-  if (songs.length > 0) {
-    const firstSong = songs[0];
-    firstSong.play();
-    
-  }
-});
 
 
 
@@ -338,7 +388,10 @@ function playNextTrack() {
   if (currentSong) {
     currentSong.stop();
   }
-
+  
+  songs[nextIndex].setSliderMax()
+  songs[nextIndex].displaybufferedAmount()
+  requestAnimationFrame(() => songs[nextIndex].whilePlaying());
   songs[nextIndex].play();
 }
 
@@ -361,7 +414,9 @@ function playPreviousTrack() {
   if (currentSong) {
     currentSong.stop();
   }
-
+  songs[prevIndex].setSliderMax()
+  songs[prevIndex].displaybufferedAmount()
+  requestAnimationFrame(() => songs[prevIndex].whilePlaying());
   songs[prevIndex].play();
 }
 
@@ -372,6 +427,7 @@ function playPreviousTrack() {
 
 
 const showRangeProgress = (rangeInput) => {
+ 
   
   if(rangeInput === seekSlider) {
     popupPlayer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
@@ -450,12 +506,15 @@ buttonShare.forEach(function(button) {
       duration: 3000,
       gravity: "top",
       position: "right",
+      zIndex: '-1',
+      
       style: {
         
         fontFamily: "'Montserrat', sans-serif",
         background: "aliceblue",
         color: 'black',
         fontSize: "15px",
+        
         
         
      
@@ -470,7 +529,7 @@ buttonShare.forEach(function(button) {
 
 
 // toogle menu 
-const menuToggle = document.querySelector('.header_menu-toggle');
+const menuToggle = document.querySelector('.header__button');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
 menuToggle.addEventListener('click', function() {
@@ -497,7 +556,7 @@ toggleButtons.forEach(button => {
   });
 });
 
-let subClose = document.querySelector('.close-menu')
+let subClose = document.querySelector('.dropdown-menu__button')
 
 subClose.addEventListener('click',  () => {
   document.querySelector('.header').classList.remove('menu-open');
