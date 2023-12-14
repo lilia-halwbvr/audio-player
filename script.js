@@ -51,6 +51,7 @@ for (let i = 0; i < songsCount; i++) {
 
   songs.push({
     id: i,
+    // text: arr[i],
     state: 'play',
     audio: audios[i],
     durationContainer: durationContainers[i],
@@ -544,6 +545,11 @@ document.addEventListener('click', function(event) {
     document.querySelector('.header').classList.remove('menu-open');
   }
 });
+
+
+
+
+
 
 const toggleButtons = document.querySelectorAll('.toggle-button');
 

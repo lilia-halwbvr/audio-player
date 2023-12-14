@@ -176,6 +176,8 @@ button:hover {
        
     }
   }
+
+
   
   .menu-open .dropdown-menu {
     right: 0; 
@@ -399,6 +401,12 @@ li {
             width: 100%;
             right: -100%;
           }
+          .dropdown-menu__name {
+            font-size: 15px;
+             
+          }
+         
+
         }
       }
 
@@ -516,7 +524,7 @@ li {
     margin: 0;
     padding: 10px;
     margin: 0 20px 0 0;
-    width: 40%;
+    width: 50%;
     background-color: #50A584;
     border: none;
     height: 53px;
@@ -589,7 +597,7 @@ li {
 @media (max-width: 1023px) {
     .album__button-listen,
     .album__button-share {
-        font-size: 12px;
+        font-size: 11px;
         padding: 8px; 
     }
 
@@ -1508,6 +1516,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   
     .popup-album {
       min-width: 250px; 
+
+    }
+    .popup-description {
+        margin-right: 2rem;
     }
   }
   
@@ -1524,6 +1536,9 @@ input[type="range"]:active::-webkit-slider-thumb {
     .popup-album {
       min-width: 200px; 
     }
+    .popup-description {
+        margin-right: 2rem;
+    }
   }
   
   
@@ -1535,32 +1550,16 @@ input[type="range"]:active::-webkit-slider-thumb {
     .popup__container {
       width: 90%;
     }
+   .popup-description {
+       margin-right: 2rem;
+   }
+    
   
-    .popup-album {
-      min-width: 100px;
-      justify-content: flex-start;
-    }
-  
-    .popup-description {
-      margin: 10px ;
-      justify-content: flex-start;
-    }
+    
     .popup-volume {
         min-width: 113px;
     }
-  
-    .popup-img {
-      width: 30px;
-      height: 30px;
-    }
-  
-    .album-song {
-      font-size: 7px;
-    }
-  
-    .artist {
-      font-size: 5px;
-    }
+    
   
     .button-track {
       width: 15px;
@@ -1584,7 +1583,17 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 
 
- 
+  @media only screen and (max-width: 490px) {
+    .popup-album {
+        display: none;
+    }
+    .popup-volume{
+        display: none;
+    }
+    .popup-player {
+        width: 100%;
+    }
+  }
 
 
 
