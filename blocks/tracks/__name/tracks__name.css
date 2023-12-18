@@ -9,13 +9,15 @@
         font-size: 16px; 
     }
 }
-@media only screen and (max-width: 472px) {
-    .tracks__name {
-        font-size: 12px; 
-    }
-}
+
 @media only screen and (max-width: 767px) {
     .tracks__name {
         font-size: 14px; 
+    }
+}
+@media only screen and (max-width: 644px) {
+    .tracks__name{
+        font-size: 12px;
+      
     }
 }

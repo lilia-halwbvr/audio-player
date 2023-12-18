@@ -3,10 +3,21 @@
     list-style: none;
     position: absolute;
     top: 100px;
-    right: 0;
+    right: 15px;
     padding: 0;
     width: 50px;
-    text-align: center;
     margin-right: 1.5rem;
     z-index: -1;
+}
+
+@media only screen and (max-width: 644px) {
+    .header__list {
+        position: relative;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        top: auto;
+        margin: 0 1rem;
+        justify-content: space-between;
+    }
 }

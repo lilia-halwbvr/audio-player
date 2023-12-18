@@ -7,17 +7,18 @@
     align-items: center;
 }
 @media only screen and (min-width: 1024px) {
-    .popup-album {
+    .popup__album {
         min-width: 250px; 
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .popup-album {
+    .popup__album {
         min-width: 200px; 
     }
 }
-@media only screen and (max-width: 490px) {
-    .popup-album {
+@media only screen and (max-width: 644px) {
+    .popup__album {
         display: none;
     }
 }
+

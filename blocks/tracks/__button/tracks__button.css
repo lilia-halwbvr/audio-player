@@ -9,9 +9,10 @@
         padding: 5px;
     }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 644px) {
     .tracks__button {
         width: 15px;
         height: 13px;
+      
     }
 }

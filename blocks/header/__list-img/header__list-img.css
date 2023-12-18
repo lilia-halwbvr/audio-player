@@ -1,4 +1,15 @@
 .header__list-img {
-    width: 20px;
+    width: 25px;
     margin: 10px;
+    background-size: cover;
+}
+@media only screen and (max-width: 644px) {
+    .header__list-img {
+       width: 20px;
+    }
+}
+@media only screen and (max-width: 427px) {
+    .header__list-img {
+       width: 15px;
+    }
 }

@@ -5,3 +5,9 @@
     width: 100%;
     z-index: 40;
 }
+@media only screen and (max-width: 644px) {
+    .header {
+       background-color: rgba(0, 0, 0, 0.679);
+       backdrop-filter: blur(4px);
+    }
+}
