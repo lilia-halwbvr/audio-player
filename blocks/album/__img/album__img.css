@@ -1,0 +1,14 @@
+.album__img {
+    min-width: 90%;
+    height: 62.5%;
+    max-width: 408px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+   
+}
+
+@media (max-width: 767px) {
+    .album__img {
+        padding: 0;
+    }
+}

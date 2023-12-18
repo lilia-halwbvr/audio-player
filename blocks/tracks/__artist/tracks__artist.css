@@ -1,0 +1,17 @@
+.tracks__artist {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    font-weight: 100;
+    margin: 0 0 0 20px;
+    color: rgba(156, 156, 156, 1);
+}
+@media only screen and (min-width: 768px) {
+    .tracks__artist {
+        font-size: 12px; 
+    }
+}
+@media only screen and (max-width: 767px) {
+    .tracks__artist {
+        font-size: 10px;
+    }
+}

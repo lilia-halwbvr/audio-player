@@ -1,0 +1,12 @@
+.header__list {
+    font-size: 18px;
+    list-style: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 0;
+    width: 50px;
+    text-align: center;
+    margin-right: 1.5rem;
+    z-index: -1;
+}

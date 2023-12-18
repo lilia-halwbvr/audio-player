@@ -21,7 +21,7 @@ let currentPopupSong = null;
 
 
 
-const popupPlayer = document.querySelector('.popup-player')
+const popupPlayer = document.querySelector('.popup__player')
 
 const seekSlider = document.getElementById('seek-slider');
 const volumeSlider = document.getElementById('volume-slider');
@@ -88,10 +88,10 @@ for (let i = 0; i < songsCount; i++) {
     },
       renderPlay: function() {
         let popup = document.querySelector('.popup')
-        popup.classList.remove('popup-invisible')
-        let songName = document.querySelector('.album-song')
+        popup.classList.remove('popup_invisible')
+        let songName = document.querySelector('.popup__album-song')
         songName.textContent = this.name
-        let songDuration = document.querySelector('.time-popup')
+        let songDuration = document.querySelector('.popup__time')
         songDuration.textContent = calculateTime(this.audio.duration)
         currentSong = this
         currentPopupSong = this

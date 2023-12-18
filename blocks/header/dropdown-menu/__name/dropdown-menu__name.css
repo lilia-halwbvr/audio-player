@@ -1,0 +1,12 @@
+.dropdown-menu__name {
+    font-size: 10px;
+    margin: 0 10px 0 0 ;
+    
+}
+@media only screen and (max-width: 644px) {
+    .dropdown-menu__name {
+      font-size: 15px;
+       
+    }
+
+  }

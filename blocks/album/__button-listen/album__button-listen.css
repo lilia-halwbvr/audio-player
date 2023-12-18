@@ -1,0 +1,49 @@
+.album__button-listen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    color: aliceblue;
+    font-family: 'Monument Extended';
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+    margin: 0;
+    padding: 10px;
+    margin: 0 20px 0 0;
+    width: 50%;
+    background-color: #50A584;
+    border: none;
+    height: 53px;
+}
+.album__button-listen:hover {
+    background-color: aliceblue;
+    border: none;
+    color: black;
+}
+.album__button-listen:hover .album__button-listen-pic {
+    background-image: url(../../../images/buttom-play-hover.png);
+}
+@media (max-width: 1023px) {
+    .album__button-listen {
+        font-size: 11px;
+        padding: 8px; 
+    }
+
+    
+}
+
+/* @media (max-width: 767px) {
+    .album__button-listen {
+        width: 100%; 
+        margin: 0 0 10px 0; 
+    }
+} */
+@media (max-width: 767px) {
+    .album__button-listen {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

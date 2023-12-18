@@ -1,0 +1,28 @@
+.pause-popup-button {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../../images/pause-popup-button.png);
+    background-color: transparent;
+    border-style: none;
+    padding: 10;
+    margin: auto 15px;
+    border-style: none;
+    object-fit: cover;
+    background-size: cover;
+    transition: transform .2s;
+    overflow: hidden;
+}
+.play-popup-button {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../../images/play-pause-popup.png);
+    background-color: transparent;
+    border-style: none;
+    padding: 10px;
+    margin: auto 15px;
+    border-style: none;
+    object-fit: contain;
+    background-size: contain;
+    transition: transform .2s;
+    overflow: hidden;
+}

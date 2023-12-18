@@ -1,0 +1,35 @@
+.dropdown-menu__list {
+    width: 90%;
+    color: aliceblue;
+    list-style: none;
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: 400; 
+    font-size: 20px;
+    margin: 50px 30px 0;
+    padding: 0;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    
+}
+
+.dropdown-menu__list::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.dropdown-menu__list::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 0px; 
+}
+
+.dropdown-menu__list::-webkit-scrollbar-track {
+    background-color: #000000; 
+}
+@media only screen and (max-width: 768px) {
+    .dropdown-menu__list {
+      height: auto;
+      max-height: 70vh;
+    }
+  }

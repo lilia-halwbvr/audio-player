@@ -1,0 +1,8 @@
+.dropdown-menu__img-close {
+    width: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    text-align: center;
+    z-index: 10;
+}

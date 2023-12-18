@@ -1,0 +1,15 @@
+.button__track {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    cursor: pointer;
+} 
+@media only screen and (max-width: 767px) {
+    .button__track {
+        width: 15px;
+        height: 15px;
+    }
+}

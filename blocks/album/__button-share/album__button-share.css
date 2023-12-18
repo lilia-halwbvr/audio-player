@@ -1,0 +1,48 @@
+.album__button-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    width: 40%; 
+    background-color: transparent; 
+    border: 1px solid aliceblue; 
+    height: 53px;
+    color: aliceblue;
+    cursor: pointer;
+    font-family: 'Monument Extended';
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+    padding: 10px;
+}
+
+.album__button-share:hover {
+    background-color: aliceblue;
+    border: none;
+    color: black;
+}
+
+.album__button-share:hover .album__button-share-pic {
+    background-image: url(../../../images/button-share-hover.png);
+}
+
+@media (max-width: 1023px) {
+   
+    .album__button-share {
+        font-size: 11px;
+        padding: 8px; 
+    }
+
+  
+}
+
+@media (max-width: 767px) {
+    
+    .album__button-share {
+        width: 100%; 
+        margin: 0 0 10px 0; 
+    }
+}

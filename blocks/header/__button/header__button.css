@@ -1,0 +1,8 @@
+.header__button {
+    background-image: url(../../../images/clarity_menu-line.png);
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+}

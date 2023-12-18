@@ -1,0 +1,25 @@
+.album__button-share-pic {
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 10px 0;
+    background-image: url(../../../images/share-button.png);
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1023px) {
+   
+    .album__button-share-pic {
+        width: 16px;
+        height: 16px;
+        margin: 8px 8px 8px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .album__button-share-pic {
+        margin: 0 10px 0 0;
+    }
+}

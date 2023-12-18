@@ -1,0 +1,10 @@
+.footer__input {
+    background-color: transparent;
+    padding-bottom: 0.5rem;
+    border: none;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+}
+input:focus {
+    outline: none;
+}

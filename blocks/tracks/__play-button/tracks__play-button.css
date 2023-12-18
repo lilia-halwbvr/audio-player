@@ -1,0 +1,15 @@
+.tracks__play-button {
+    border: none;
+    outline: none;
+    margin: auto;
+    cursor: pointer;
+    padding: 0px;
+    border-style: none;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+    color: aliceblue;
+}

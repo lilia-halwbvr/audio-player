@@ -1,0 +1,28 @@
+.album__header {
+    font-family: 'Monument Extended';
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F1F1F1;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3rem;
+    line-height: 1;
+    font-weight: 500;
+    font-size: calc((100vw - 320px)/(1280 - 320) * (50 - 35) + 35px + 20%);
+    z-index: 1;
+}
+@media (min-width: 1024px) {
+    .album__header {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .album__header {
+        font-size: 35px;
+    }
+}
+@media (max-width: 767px) {
+    .album__header {
+        font-size: 35px;
+    }
+}

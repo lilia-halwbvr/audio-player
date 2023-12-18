@@ -1,0 +1,19 @@
+.popup__container {
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    margin: auto;
+    align-items:center;
+    box-sizing: border-box;
+   
+}
+@media only screen and (min-width: 1024px) {
+    .popup__container {
+        width: 90%; 
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .popup__container {
+        width: 90%; 
+    }
+}

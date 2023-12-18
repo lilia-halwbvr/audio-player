@@ -1,0 +1,16 @@
+.album__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .album__buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

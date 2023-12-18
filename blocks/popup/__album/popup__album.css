@@ -1,0 +1,23 @@
+.popup__album {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:  auto 0 ;
+    box-sizing: border-box;
+    align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+    .popup-album {
+        min-width: 250px; 
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .popup-album {
+        min-width: 200px; 
+    }
+}
+@media only screen and (max-width: 490px) {
+    .popup-album {
+        display: none;
+    }
+}

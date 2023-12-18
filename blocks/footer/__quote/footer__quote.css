@@ -1,0 +1,11 @@
+.footer__quote{
+    color: #898888;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    letter-spacing: 0.1em;
+    margin: 30px auto;
+    width: 75%;
+    text-align: center;
+}
+

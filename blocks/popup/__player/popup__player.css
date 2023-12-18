@@ -1,0 +1,23 @@
+.popup__player {
+    --seek-before-width: 0%;
+    --volume-before-width: 100%;
+  --buffered-width: 0%;
+  position: relative;
+  margin: auto 3rem;
+  width: 70%;
+  background:rgb(29, 29, 29);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+    .popup__player {
+        margin: auto 1rem;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .popup__player {
+        width: 100%;
+    }
+}

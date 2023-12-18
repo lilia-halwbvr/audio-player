@@ -1,0 +1,22 @@
+.footer__navigation {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    color: aliceblue;
+    font-family: 'Monument Extended';
+    margin: 50px auto;
+}
+
+
+@media (min-width: 768px) {
+    .footer__navigation {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .footer__navigation {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    }
+}

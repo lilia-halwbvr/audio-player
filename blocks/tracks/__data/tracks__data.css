@@ -1,0 +1,7 @@
+.tracks__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 16px 8px 16px 0;
+}

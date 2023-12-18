@@ -1,0 +1,100 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/Montserrat-ExtraLightItalic.ttf);
+@import url(../vendor/fonts/Montserrat-Italic-VariableFont_wght.ttf);
+@import url(../vendor/fonts/Montserrat-Light.ttf);
+@import url(../vendor/fonts/Montserrat-VariableFont_wght.ttf);
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__button/header__button.css);
+@import url(../blocks/header/__content/header__content.css);
+@import url(../blocks/header/__list-img/header__list-img.css);
+@import url(../blocks/header/__list-link/header__list-link.css);
+@import url(../blocks/header/__list/header__list.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/header/dropdown-menu/dropdown-menu.css);
+@import url(../blocks/header/dropdown-menu/__button/dropdown-menu__button.css);
+@import url(../blocks/header/dropdown-menu/__header/dropdown-menu__header.css);
+@import url(../blocks/header/dropdown-menu/__img-close/dropdown-menu__img-close.css);
+@import url(../blocks/header/dropdown-menu/__img/dropdown-menu__img.css);
+@import url(../blocks/header/dropdown-menu/__item/dropdown-menu__item.css);
+@import url(../blocks/header/dropdown-menu/__link/dropdown-menu__link.css);
+@import url(../blocks/header/dropdown-menu/__links/dropdown-menu__links.css);
+@import url(../blocks/header/dropdown-menu/__list/dropdown-menu__list.css);
+@import url(../blocks/header/dropdown-menu/__logo/dropdown-menu__logo.css);
+@import url(../blocks/header/dropdown-menu/__name/dropdown-menu__name.css);
+@import url(../blocks/header/dropdown-menu/__sub-menu/dropdown-menu__sub-menu.css);
+@import url(../blocks/header/dropdown-menu/__sub/dropdown-menu__sub.css);
+@import url(../blocks/header/dropdown-menu/button-toogle/button-toogle.css);
+@import url(../blocks/header/dropdown-menu/toggle-button/toggle-button.css);
+
+@import url(../blocks/album/album.css);
+@import url(../blocks/album/__button-listen-pic/album__button-listen-pic.css);
+@import url(../blocks/album/__button-listen/album__button-listen.css);
+@import url(../blocks/album/__button-share-pic/album__button-share-pic.css);
+@import url(../blocks/album/__button-share/album__button-share.css);
+@import url(../blocks/album/__buttons/album__buttons.css);
+@import url(../blocks/album/__data/album__data.css);
+@import url(../blocks/album/__header/album__header.css);
+@import url(../blocks/album/__img/album__img.css);
+@import url(../blocks/album/__name/album__name.css);
+@import url(../blocks/album/__pic/album__pic.css);
+@import url(../blocks/album/__released/album__released.css);
+@import url(../blocks/album/__volume-name/album__volume-name.css);
+
+
+
+@import url(../blocks/stream/stream.css);
+@import url(../blocks/stream/__content/stream__content.css);
+@import url(../blocks/stream/__music-player/stream__music-player.css);
+@import url(../blocks/stream/__table-link/stream__table-link.css);
+@import url(../blocks/stream/__table-links/stream__table-links.css);
+
+@import url(../blocks/tracks/tracks.css);
+@import url(../blocks/tracks/__artist/tracks__artist.css);
+@import url(../blocks/tracks/__button/tracks__button.css);
+@import url(../blocks/tracks/__data/tracks__data.css);
+@import url(../blocks/tracks/__light/track__light.css);
+@import url(../blocks/tracks/__name/tracks__name.css);
+@import url(../blocks/tracks/__number/tracks__number.css);
+@import url(../blocks/tracks/__play-button/tracks__play-button.css);
+@import url(../blocks/tracks/__share-button/tracks__share-button.css);
+@import url(../blocks/tracks/__table/tracks__table.css);
+@import url(../blocks/tracks/__time/tracks__time.css);
+
+@import url(../blocks/video/video.css);
+@import url(../blocks/video/__iframe/iframe.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__about/footer__about.css);
+@import url(../blocks/footer/__author/footer__author.css);
+@import url(../blocks/footer/__content/footer__content.css);
+@import url(../blocks/footer/__form/footer__form.css);
+@import url(../blocks/footer/__input/footer__input.css);
+@import url(../blocks/footer/__mcr/footer__mcr.css);
+@import url(../blocks/footer/__navigation/footer__navigation.css);
+@import url(../blocks/footer/__policy/footer__policy.css);
+@import url(../blocks/footer/__quote/footer__quote.css);
+@import url(../blocks/footer/__sub/footer__sub.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__album-song/popup__album-song.css);
+@import url(../blocks/popup/__album/popup__album.css);
+@import url(../blocks/popup/__artist/popup__artist.css);
+@import url(../blocks/popup/__button-next-track/button-next-track.css);
+@import url(../blocks/popup/__button-prev-track/button-prev-track.css);
+@import url(../blocks/popup/__button__track/button__track.css);
+@import url(../blocks/popup/__buttons/popup__buttons.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__description/popup__description.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__mute-icon/popup__mute-icon.css);
+@import url(../blocks/popup/__player/popup__player.css);
+@import url(../blocks/popup/__slider/popup__slider.css);
+@import url(../blocks/popup/__time-duration/popup__time-duration.css);
+@import url(../blocks/popup/__time/popup__time.css);
+@import url(../blocks/popup/__track-image/popup__track-image.css);
+@import url(../blocks/popup/__volume/popup__volume.css);
+@import url(../blocks/popup/_invisible/popup_invisible.css);
+@import url(../blocks/popup/pause-popup-button/pause-popup-button.css);
+

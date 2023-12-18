@@ -1,0 +1,10 @@
+.dropdown-menu__item {
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    list-style-type: none;
+    position: relative;
+    line-height: 1.1; 
+    
+}

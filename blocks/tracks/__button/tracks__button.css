@@ -1,0 +1,17 @@
+.tracks__button {
+    text-align: center;
+    color: aliceblue;
+}
+@media only screen and (min-width: 768px) {
+    .tracks__button {
+        width: 20px;
+        height: 18px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .tracks__button {
+        width: 15px;
+        height: 13px;
+    }
+}

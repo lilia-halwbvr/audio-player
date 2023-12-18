@@ -1,0 +1,33 @@
+.album__pic {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    
+}
+
+@media (min-width: 1024px) {
+    .album__pic {
+        width: 40%;
+        justify-content: flex-start;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .album__pic{
+        width: 100%;
+        margin-bottom: 20px;
+       
+    }
+
+}
+
+@media (max-width: 767px) {
+    .album__pic {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}

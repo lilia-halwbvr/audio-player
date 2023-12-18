@@ -1,0 +1,23 @@
+.tracks__share-button {
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+    background-image: url(../../../images/share-button.png);
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    background-repeat: no-repeat;
+}
+@media only screen and (min-width: 768px) {
+    .tracks__share-button {
+        width: 20px;
+        height: 18px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .tracks__share-button {
+        width: 15px;
+        height: 13px;
+    }
+}

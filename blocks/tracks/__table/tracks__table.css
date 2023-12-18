@@ -1,0 +1,12 @@
+.tracks__table {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    width: 100%;
+    border: none;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.tracks__table td,
+.tracks__table th {
+    padding: 0; 
+}

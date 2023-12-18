@@ -1,0 +1,17 @@
+.album__released {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14px;
+    margin: 0 0 auto 15px;
+    max-width:400px;
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+    color: aliceblue;
+}
+
+@media (max-width: 767px) {
+    .album__released {
+        margin: 0 0 10px 0;
+    }
+}

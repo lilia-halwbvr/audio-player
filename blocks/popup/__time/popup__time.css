@@ -1,0 +1,10 @@
+.popup__time {
+    color: aliceblue;
+    font-family: 'Montserrat';
+    display: inline-block;
+    width: 37px;
+    text-align: center;
+    font-size: 10px;
+    margin: auto 0 ;
+
+}

@@ -1,0 +1,16 @@
+.popup__volume {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+@media only screen and (max-width: 767px) {
+    .popup__volume {
+        min-width: 113px;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .popup__volume {
+        display: none;
+    }
+}

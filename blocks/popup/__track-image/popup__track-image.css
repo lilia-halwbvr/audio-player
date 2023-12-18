@@ -1,0 +1,5 @@
+.popup__track-image {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}

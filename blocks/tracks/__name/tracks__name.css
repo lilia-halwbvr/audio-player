@@ -1,0 +1,21 @@
+.tracks__name {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 0 20px;
+}
+@media only screen and (min-width: 768px) {
+    .tracks__name {
+        font-size: 16px; 
+    }
+}
+@media only screen and (max-width: 472px) {
+    .tracks__name {
+        font-size: 12px; 
+    }
+}
+@media only screen and (max-width: 767px) {
+    .tracks__name {
+        font-size: 14px; 
+    }
+}
