@@ -1,4 +1,4 @@
-# Black Parade Audio Player
+# The Black Parade Audio Player
 
 Welcome to the Black Parade Audio Player – a lightweight and stylish audio player built with vanilla JavaScript, HTML, and CSS. This project leverages modern web development technologies like flexbox, grid, BEM, and incorporates interesting libraries to enhance the user experience.
 
@@ -22,7 +22,7 @@ Welcome to the Black Parade Audio Player – a lightweight and stylish audio pla
 
 ## Author
 
-- Lily
+- Lily Halwbvr
 
 ## Getting Started
 
