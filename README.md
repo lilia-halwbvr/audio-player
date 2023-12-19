@@ -6,7 +6,7 @@ Welcome to the Black Parade Audio Player – a lightweight and stylish audio pla
 
 - 🎵 Play audio files with basic playback controls.
 - 🎨 Stylish design using flexbox and grid for responsiveness.
-- 🌟 Integration of libraries like toastify-js, Typed.js, and lottie-web for enhanced functionality and visual appeal.
+- 🌟 Integration of libraries like Toastify-js, Typed.js, and Lottie-web for enhanced functionality and visual appeal.
 
 ## Technologies Used
 
